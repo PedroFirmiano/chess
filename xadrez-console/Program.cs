@@ -10,6 +10,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             Posicao p;
             p = new Posicao(3, 4);
+            Tabuleiro tab = new Tabuleiro(8, 8);
 
             Console.WriteLine("Posicao: " + p.ToString());
         }
