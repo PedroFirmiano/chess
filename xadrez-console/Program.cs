@@ -9,19 +9,31 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
 
-            Posicao p;
-            p = new Posicao(3, 4);
-            Tabuleiro tab = new Tabuleiro(8, 8);
-          
+            try
+            {
+                Console.WriteLine("Hello World!");
 
-            tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-            tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
-            tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(2, 4));
-            Console.WriteLine("Posicao: " + p.ToString());
-            Tela.imprimirTabuleiro(tab);
+                Posicao p;
+                p = new Posicao(3, 4);
+                Tabuleiro tab = new Tabuleiro(8, 8);
 
+
+                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
+                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
+                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 0));
+                Console.WriteLine("Posicao: " + p.ToString());
+                Tela.imprimirTabuleiro(tab);
+
+
+                Console.WriteLine();
+
+
+            }
+            catch(TabuleiroException e) 
+            {
+                Console.WriteLine(e.Message);
+            }
 
         }
     }
