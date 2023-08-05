@@ -25,10 +25,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     try
                     {
                         Console.Clear();
-                        Tela.imprimirTabuleiro(partida.tab);
-                        Console.WriteLine();
-                        Console.WriteLine("Turno " + partida.turno);
-                        Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                        Tela.imprimirPartida(partida);
+
 
 
 
@@ -40,7 +38,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 
 
-                        bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPosiveis();
+                        bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
                         Console.Clear();
                         Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
@@ -59,10 +57,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
                         Console.ReadLine();
                     }
 
-
-
-
                 }
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
             catch (TabuleiroException e)
             {

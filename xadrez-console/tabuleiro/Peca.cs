@@ -21,11 +21,11 @@ namespace xadrez_console.tabuleiro
             this.qteMovimentos = 0;
         }
 
-        public abstract bool[,] movimentosPosiveis();
+        public abstract bool[,] movimentosPossiveis();
 
         public bool existeMovimentosPossiveis()
         {
-            bool[,] mat = movimentosPosiveis();
+            bool[,] mat = movimentosPossiveis();
             for (int i = 0; i < tab.linhas; i++)
             {
 
@@ -41,14 +41,19 @@ namespace xadrez_console.tabuleiro
             return false;
         }
 
-        public bool podeMoverPara(Posicao pos)
+        public bool movimentoPossivel(Posicao pos)
         {
-            return movimentosPosiveis()[pos.linha, pos.coluna];
+            return movimentosPossiveis()[pos.linha, pos.coluna];
         }
 
         public  void incrementarQtdMovimentos()
         {
             qteMovimentos++;
+        }
+
+        public void decrementarQtdMovimentos()
+        {
+            qteMovimentos--;
         }
     }
 }

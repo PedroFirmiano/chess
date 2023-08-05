@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using xadrez_console;
+using xadrez_console.tabuleiro;
+using xadrez_console.xadrez;
+using xadrez;
 
 namespace xadrez_console.tabuleiro
 {
@@ -40,6 +40,7 @@ namespace xadrez_console.tabuleiro
                 throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
             pecas[pos.linha, pos.coluna] = p;
+           
             p.posicao = pos;
 
         }
